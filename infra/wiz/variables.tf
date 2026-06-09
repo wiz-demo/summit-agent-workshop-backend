@@ -29,6 +29,64 @@ variable "wiz_env" {
   type        = string
 }
 
+# ----- Tenant 1 -----
+
+variable "wiz_env_t1" {
+  description = "Wiz environment (data center) for tenant 1."
+  type        = string
+}
+
+variable "wiz_client_id_t1" {
+  description = "Tenant 1 Wiz service account client ID."
+  type        = string
+  sensitive   = true
+
+  validation {
+    condition     = length(var.wiz_client_id_t1) > 0
+    error_message = "wiz_client_id_t1 must not be empty."
+  }
+}
+
+variable "wiz_client_secret_t1" {
+  description = "Tenant 1 Wiz service account client secret."
+  type        = string
+  sensitive   = true
+
+  validation {
+    condition     = length(var.wiz_client_secret_t1) > 0
+    error_message = "wiz_client_secret_t1 must not be empty."
+  }
+}
+
+# ----- Tenant 2 -----
+
+variable "wiz_env_t2" {
+  description = "Wiz environment (data center) for tenant 2."
+  type        = string
+}
+
+variable "wiz_client_id_t2" {
+  description = "Tenant 2 Wiz service account client ID."
+  type        = string
+  sensitive   = true
+
+  validation {
+    condition     = length(var.wiz_client_id_t2) > 0
+    error_message = "wiz_client_id_t2 must not be empty."
+  }
+}
+
+variable "wiz_client_secret_t2" {
+  description = "Tenant 2 Wiz service account client secret."
+  type        = string
+  sensitive   = true
+
+  validation {
+    condition     = length(var.wiz_client_secret_t2) > 0
+    error_message = "wiz_client_secret_t2 must not be empty."
+  }
+}
+
 # =============================================================================
 # AWS Provider Variables
 # =============================================================================
